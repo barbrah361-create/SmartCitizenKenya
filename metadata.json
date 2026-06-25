@@ -1,0 +1,6 @@
+{
+  "name": "Kenya Smart Citizen Portal",
+  "description": "An academic demonstration of a modern, premium, highly engaging enterprise-level citizen service portal inspired by Kenya's eCitizen platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
