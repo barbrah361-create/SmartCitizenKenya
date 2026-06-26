@@ -1,0 +1,264 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "name": "Hon. Jane Mwangi",
+      "nationalId": "12345678",
+      "phone": "+254 712 345678",
+      "email": "admin@citizen.go.ke",
+      "password": "$2b$10$4sk3iFYZ2fBe/yKQkmqh7.myiconeHqrorDoF4FxX1RQf.xWt8uWi",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-06-25T20:27:43.125Z"
+    },
+    {
+      "id": "usr_citizen",
+      "name": "David Kiprop",
+      "nationalId": "87654321",
+      "phone": "+254 722 987654",
+      "email": "citizen@citizen.go.ke",
+      "password": "$2b$10$4sk3iFYZ2fBe/yKQkmqh7.87YYnIheUa6GmNNaN8Z1oetC8s80Zt2",
+      "role": "citizen",
+      "status": "active",
+      "createdAt": "2026-06-25T20:27:43.125Z"
+    }
+  ],
+  "services": [
+    {
+      "id": "srv_bike",
+      "name": "Boda Boda Motorcycle Registration",
+      "description": "Official registration and digital logbook allocation for motorbike owners and commercial operators under NTSA guidelines.",
+      "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=600",
+      "icon": "Bike",
+      "department": "National Transport and Safety Authority (NTSA)",
+      "estimatedDays": 3,
+      "requirements": [
+        "Proof of ownership (Invoice/Logbook)",
+        "ID Card copy",
+        "KRA PIN Certificate",
+        "Insurances policy copy"
+      ]
+    },
+    {
+      "id": "srv_id",
+      "name": "National ID Card Application",
+      "description": "Apply for a new national registration card, replace a lost ID, or correct card information with the civil registry.",
+      "image": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=600",
+      "icon": "CreditCard",
+      "department": "National Registration Bureau (NRB)",
+      "estimatedDays": 14,
+      "requirements": [
+        "Birth Certificate copy",
+        "Parent's ID copies",
+        "School leaving certificate",
+        "Chief's introduction letter"
+      ]
+    },
+    {
+      "id": "srv_conduct",
+      "name": "Certificate of Good Conduct",
+      "description": "Police clearance certificate validating the applicant's criminal status for employment or travel clearance.",
+      "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600",
+      "icon": "FileCheck",
+      "department": "Directorate of Criminal Investigations (DCI)",
+      "estimatedDays": 5,
+      "requirements": [
+        "Fingerprint appointment booking",
+        "National ID Copy",
+        "eCitizen invoice receipt"
+      ]
+    },
+    {
+      "id": "srv_birth",
+      "name": "Birth Certificate Issuance",
+      "description": "Obtain a certified legal document detailing birth records for individuals born within Kenyan jurisdictions.",
+      "image": "https://images.unsplash.com/photo-1505784043824-aa970094ee9b?auto=format&fit=crop&q=80&w=600",
+      "icon": "Baby",
+      "department": "Civil Registration Department",
+      "estimatedDays": 7,
+      "requirements": [
+        "Notification of Birth (Clinic Card)",
+        "Parents' National IDs",
+        "KRA PIN of parents"
+      ]
+    },
+    {
+      "id": "srv_business",
+      "name": "Unified Business Permit",
+      "description": "Acquire county-level commercial licensing covering health, fire, advertising, and trade regulations.",
+      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
+      "icon": "Briefcase",
+      "department": "Nairobi City County Business Licensing",
+      "estimatedDays": 2,
+      "requirements": [
+        "Business Registration Certificate",
+        "KRA PIN of business",
+        "Physical address details",
+        "Land rates receipt"
+      ]
+    },
+    {
+      "id": "srv_dl",
+      "name": "Driving License Renewal",
+      "description": "Fast digital renewal of standard driving license credentials for 1-year or 3-year periods.",
+      "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600",
+      "icon": "ShieldAlert",
+      "department": "National Transport and Safety Authority (NTSA)",
+      "estimatedDays": 1,
+      "requirements": [
+        "Existing Driving License Number",
+        "National ID card scan",
+        "Medical eye test certificate (for heavy vehicles)"
+      ]
+    },
+    {
+      "id": "srv_passport",
+      "name": "New Generation Passport Application",
+      "description": "Apply for a secure biometric e-passport with international travel validation.",
+      "image": "https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&q=80&w=600",
+      "icon": "Compass",
+      "department": "Department of Immigration Services",
+      "estimatedDays": 21,
+      "requirements": [
+        "Birth Certificate copy",
+        "National ID card copy",
+        "Recommender's ID Copy",
+        "3 Passport size photos"
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "id": "app_demo_1",
+      "userId": "usr_citizen",
+      "userName": "David Kiprop",
+      "userEmail": "citizen@citizen.go.ke",
+      "serviceId": "srv_dl",
+      "serviceName": "Driving License Renewal",
+      "status": "Approved",
+      "fields": {
+        "licenseNumber": "DL-987654-K",
+        "renewalPeriod": "3 Years",
+        "county": "Nairobi",
+        "bloodGroup": "O+"
+      },
+      "documents": [
+        {
+          "id": "doc_1",
+          "name": "current_dl_scan.jpg",
+          "url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=300",
+          "size": "420 KB"
+        }
+      ],
+      "reviewNotes": "Details verified successfully. Electronic credential issued.",
+      "createdAt": "2026-06-20T20:27:43.125Z",
+      "updatedAt": "2026-06-21T20:27:43.125Z"
+    },
+    {
+      "id": "app_demo_2",
+      "userId": "usr_citizen",
+      "userName": "David Kiprop",
+      "userEmail": "citizen@citizen.go.ke",
+      "serviceId": "srv_conduct",
+      "serviceName": "Certificate of Good Conduct",
+      "status": "Pending Review",
+      "fields": {
+        "fingerprintDate": "2026-06-28",
+        "station": "DCI Headquarters Kiambu Road",
+        "purpose": "Job Application",
+        "employer": "Safaricom PLC"
+      },
+      "documents": [
+        {
+          "id": "doc_2",
+          "name": "national_id_scan.pdf",
+          "url": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=300",
+          "size": "1.2 MB"
+        }
+      ],
+      "createdAt": "2026-06-23T20:27:43.125Z",
+      "updatedAt": "2026-06-23T20:27:43.125Z"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert_demo_1",
+      "applicationId": "app_demo_1",
+      "serviceName": "Driving License Renewal",
+      "citizenName": "David Kiprop",
+      "citizenNationalId": "87654321",
+      "citizenPhone": "+254 722 987654",
+      "citizenEmail": "citizen@citizen.go.ke",
+      "issueDate": "2026-06-21",
+      "refNumber": "NTSA-DL-817293-2026",
+      "qrCodeValue": "https://ais-dev-oamxtjqtewiy655qciyong-817037786414.europe-west2.run.app/verify/NTSA-DL-817293-2026"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1",
+      "userId": "usr_citizen",
+      "title": "Application Submitted Successfully",
+      "message": "Your application for Certificate of Good Conduct has been received.",
+      "read": false,
+      "createdAt": "2026-06-23T20:27:43.125Z"
+    },
+    {
+      "id": "notif_2",
+      "userId": "usr_citizen",
+      "title": "Certificate Available for Download",
+      "message": "Your Driving License Renewal certificate has been issued! You can download it now.",
+      "read": true,
+      "createdAt": "2026-06-21T20:27:43.125Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log_1",
+      "userId": "usr_citizen",
+      "userName": "David Kiprop",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User successfully authenticated into the portal",
+      "createdAt": "2026-06-23T20:27:43.125Z"
+    },
+    {
+      "id": "log_2",
+      "userId": "usr_citizen",
+      "userName": "David Kiprop",
+      "userRole": "citizen",
+      "action": "Create Application",
+      "details": "Submitted a application for Certificate of Good Conduct",
+      "createdAt": "2026-06-23T20:27:43.125Z"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art_1",
+      "title": "Digital Kenya 2026: Revolutionizing Public Service Delivery",
+      "description": "The Government of Kenya accelerates eCitizen portal capabilities to simplify documentation for over 15 million citizens.",
+      "content": "Under the new Smart Kenya Blueprint, the ministry of ICT has launched premium automation modules targeting high-frequency requests including NTSA licenses, business licensing, and police clearance certifications. These cloud-backed solutions aim to reduce queue times at Huduma centers by up to 90% in key urban sectors like Nairobi, Mombasa, and Kisumu.",
+      "image": "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=800",
+      "date": "2026-06-20",
+      "category": "Policy Announcements"
+    },
+    {
+      "id": "art_2",
+      "title": "Simplified Boda Boda Operator Registration Guidelines Launched",
+      "description": "The Ministry of Transport partners with NTSA to roll out instantaneous digital certificate renewals for motorbike operators.",
+      "content": "To enhance micro-entrepreneurship and road safety, the newly simplified motorbike registration module allows riders to verify ownership, upload insurance certificates, and download instant digitized operation permits. Local county operators will also receive tailored SMS safety alerts directly.",
+      "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=800",
+      "date": "2026-06-22",
+      "category": "Transit Reforms"
+    },
+    {
+      "id": "art_3",
+      "title": "Unified Business Permitting Now Live Across All 47 Counties",
+      "description": "Entrepreneurs can now apply and pay for local county trade licenses online in a streamlined unified system.",
+      "content": "County trade, food-handling, advertising, and fire certificates have been successfully compiled into a single unified business permit system. Payments can now be disbursed securely online with certificates issued in under 48 hours.",
+      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+      "date": "2026-06-24",
+      "category": "Trade & Commerce"
+    }
+  ]
+}
