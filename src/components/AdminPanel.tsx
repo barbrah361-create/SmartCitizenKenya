@@ -373,7 +373,8 @@ export default function AdminPanel({
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={stats.serviceStats}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" truncate stroke="#888" style={{ fontSize: "10px", fontFamily: "monospace" }} />
+                        <XAxis dataKey="name" stroke="#888" style={{ fontSize: "10px", fontFamily: "monospace" }} />
+
                         <YAxis stroke="#888" style={{ fontSize: "10px", fontFamily: "monospace" }} />
                         <Tooltip contentStyle={{ fontSize: "11px", borderRadius: "4px" }} />
                         <Bar dataKey="applications" fill="#006600" radius={[2, 2, 0, 0]} />

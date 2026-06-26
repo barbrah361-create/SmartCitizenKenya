@@ -21,6 +21,17 @@
       "role": "citizen",
       "status": "active",
       "createdAt": "2026-06-25T20:27:43.125Z"
+    },
+    {
+      "id": "usr_1782485644402",
+      "name": "BARBRAH ANGEELIQUE",
+      "nationalId": "41715328",
+      "phone": "+2547 26625144",
+      "email": "barbrah361@gmail.com",
+      "password": "$2b$10$YB24c4kniFxQWl912.k2AO51RpU1xRUYGkFd3eiKid8bDMwO8t1Ai",
+      "role": "citizen",
+      "status": "active",
+      "createdAt": "2026-06-26T14:54:04.402Z"
     }
   ],
   "services": [
@@ -213,6 +224,528 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log_1782488391006_998nh",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:39:51.006Z"
+    },
+    {
+      "id": "log_1782486509823_dwt39",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:08:29.823Z"
+    },
+    {
+      "id": "log_1782486508888_mns77",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:08:28.888Z"
+    },
+    {
+      "id": "log_1782486507882_vymv3",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:08:27.882Z"
+    },
+    {
+      "id": "log_1782486506759_yiei3",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:08:26.760Z"
+    },
+    {
+      "id": "log_1782486505549_s7g0i",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:08:25.549Z"
+    },
+    {
+      "id": "log_1782486422601_1q2n2",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:07:02.601Z"
+    },
+    {
+      "id": "log_1782486421621_rtimb",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:07:01.621Z"
+    },
+    {
+      "id": "log_1782486420632_ho5ma",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:07:00.632Z"
+    },
+    {
+      "id": "log_1782486419643_cg912",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:59.643Z"
+    },
+    {
+      "id": "log_1782486417993_4t1dn",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:57.993Z"
+    },
+    {
+      "id": "log_1782486416643_7x9de",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:56.643Z"
+    },
+    {
+      "id": "log_1782486415136_q8du5",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:55.136Z"
+    },
+    {
+      "id": "log_1782486404844_o8f1m",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:44.844Z"
+    },
+    {
+      "id": "log_1782486403749_iu2jv",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:43.749Z"
+    },
+    {
+      "id": "log_1782486402692_rygtv",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:42.692Z"
+    },
+    {
+      "id": "log_1782486400017_vcphb",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:40.017Z"
+    },
+    {
+      "id": "log_1782486399020_fv6a8",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:39.020Z"
+    },
+    {
+      "id": "log_1782486397787_xp6m8",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:37.787Z"
+    },
+    {
+      "id": "log_1782486396783_79xly",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:36.783Z"
+    },
+    {
+      "id": "log_1782486395870_qzfj8",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:35.870Z"
+    },
+    {
+      "id": "log_1782486394927_xbwt2",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:34.927Z"
+    },
+    {
+      "id": "log_1782486393945_09xf1",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:33.945Z"
+    },
+    {
+      "id": "log_1782486392977_b382m",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:32.978Z"
+    },
+    {
+      "id": "log_1782486391913_w5wcs",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:31.913Z"
+    },
+    {
+      "id": "log_1782486385215_xo22o",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T15:06:25.215Z"
+    },
+    {
+      "id": "log_1782485812593_5dggv",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:52.593Z"
+    },
+    {
+      "id": "log_1782485811113_lfxff",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:51.113Z"
+    },
+    {
+      "id": "log_1782485810050_8gy1p",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:50.050Z"
+    },
+    {
+      "id": "log_1782485808939_z21wb",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:48.939Z"
+    },
+    {
+      "id": "log_1782485807184_1c9nk",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:47.184Z"
+    },
+    {
+      "id": "log_1782485805877_cyj9r",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:45.877Z"
+    },
+    {
+      "id": "log_1782485804664_c4yiu",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:44.664Z"
+    },
+    {
+      "id": "log_1782485803484_21g8e",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:43.484Z"
+    },
+    {
+      "id": "log_1782485802247_rcs1r",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:42.247Z"
+    },
+    {
+      "id": "log_1782485798863_zjb98",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:56:38.863Z"
+    },
+    {
+      "id": "log_1782485711704_cxuhq",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:11.704Z"
+    },
+    {
+      "id": "log_1782485710298_i5b2t",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:10.298Z"
+    },
+    {
+      "id": "log_1782485709259_6shsd",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:09.259Z"
+    },
+    {
+      "id": "log_1782485708175_ydau2",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:08.175Z"
+    },
+    {
+      "id": "log_1782485707163_5htak",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:07.163Z"
+    },
+    {
+      "id": "log_1782485706075_q1d6w",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:06.075Z"
+    },
+    {
+      "id": "log_1782485704939_ifgz3",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:04.939Z"
+    },
+    {
+      "id": "log_1782485703639_kly9r",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:03.639Z"
+    },
+    {
+      "id": "log_1782485702417_do898",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:02.417Z"
+    },
+    {
+      "id": "log_1782485701187_u9ces",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:01.187Z"
+    },
+    {
+      "id": "log_1782485700122_419w0",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:55:00.122Z"
+    },
+    {
+      "id": "log_1782485698950_l2nnd",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:58.950Z"
+    },
+    {
+      "id": "log_1782485697683_vh2ps",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:57.683Z"
+    },
+    {
+      "id": "log_1782485696452_bmrhb",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:56.452Z"
+    },
+    {
+      "id": "log_1782485694758_792v0",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:54.758Z"
+    },
+    {
+      "id": "log_1782485675078_mc9xq",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:35.078Z"
+    },
+    {
+      "id": "log_1782485673871_97buc",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:33.871Z"
+    },
+    {
+      "id": "log_1782485672667_b0hyd",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:32.667Z"
+    },
+    {
+      "id": "log_1782485671349_7rgmi",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:31.349Z"
+    },
+    {
+      "id": "log_1782485670042_irykl",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:30.042Z"
+    },
+    {
+      "id": "log_1782485667743_lbkr5",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T14:54:27.743Z"
+    },
+    {
+      "id": "log_1782485644404_qiorr",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Registration",
+      "details": "Citizen registered a new account",
+      "createdAt": "2026-06-26T14:54:04.404Z"
+    },
     {
       "id": "log_1",
       "userId": "usr_citizen",

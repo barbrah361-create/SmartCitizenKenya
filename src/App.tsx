@@ -73,37 +73,64 @@ export default function App() {
 
   // Check existing session & fetch metadata
   useEffect(() => {
+    let cancelled = false;
+
     const token = localStorage.getItem("smart_citizen_token");
-    
+    console.log("[auth] token present:", !!token);
+
     // Fetch public services list
     fetch("/api/services")
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((e) => console.error("Failed to load services", e));
 
-    if (token) {
-      // Validate token on server
-      fetch("/api/auth/me", {
-        headers: { "Authorization": `Bearer ${token}` }
-      })
-        .then((res) => {
-          if (res.ok) return res.json();
-          throw new Error("Invalid session");
-        })
-        .then((data) => {
-          setCurrentUser(data.user);
-          // Sync account credentials and files
-          syncUserData(token);
-        })
-        .catch(() => {
+    const authCheck = async () => {
+      if (!token) {
+        if (!cancelled) setLoading(false);
+        return;
+      }
+
+      try {
+        // Validate token on server
+        const res = await fetch("/api/auth/session", {
+          headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          console.warn("[auth] session invalid:", { status: res.status, body });
           localStorage.removeItem("smart_citizen_token");
+          if (!cancelled) {
+            setCurrentUser(null);
+            setLoading(false);
+          }
+          return;
+        }
+
+        const data = await res.json();
+        if (cancelled) return;
+
+        console.log("[auth] session valid, user:", data?.user?.email);
+        setCurrentUser(data.user);
+        // Sync account credentials and files
+        await syncUserData(token);
+      } catch (e) {
+        console.error("[auth] session check failed:", e);
+        localStorage.removeItem("smart_citizen_token");
+        if (!cancelled) {
           setCurrentUser(null);
           setLoading(false);
-        });
-    } else {
-      setLoading(false);
-    }
+        }
+      }
+    };
+
+    authCheck();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
 
   const syncUserData = async (token: string) => {
     try {
@@ -270,6 +297,17 @@ export default function App() {
         return <Auth onLoginSuccess={handleLoginSuccess} showToast={showToast} />;
 
       case "/dashboard":
+        if (!currentUser && loading) {
+          // Avoid redirect loops while auth validation/loading is still in progress
+          return (
+            <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
+              <div className="w-10 h-10 border-4 border-emerald-800 border-t-transparent rounded-full animate-spin" />
+              <p className="text-xs font-mono text-emerald-800 uppercase tracking-widest animate-pulse">
+                VALIDATING SESSION...
+              </p>
+            </div>
+          );
+        }
         if (!currentUser) {
           navigate("/auth");
           return null;
@@ -301,7 +339,18 @@ export default function App() {
           />
         );
 
+
       case "/admin":
+        if ((!currentUser || currentUser.role !== "admin") && loading) {
+          return (
+            <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
+              <div className="w-10 h-10 border-4 border-emerald-800 border-t-transparent rounded-full animate-spin" />
+              <p className="text-xs font-mono text-emerald-800 uppercase tracking-widest animate-pulse">
+                AUTHORIZING ADMIN...
+              </p>
+            </div>
+          );
+        }
         if (!currentUser || currentUser.role !== "admin") {
           navigate("/auth");
           return null;
@@ -317,8 +366,10 @@ export default function App() {
           />
         );
 
+
       case "/verify":
-        return <QrVerify initialRef={queryParams.get("ref") || ""} />;
+        return <QrVerify />;
+
 
       default:
         return (
