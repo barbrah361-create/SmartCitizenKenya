@@ -32,6 +32,17 @@
       "role": "citizen",
       "status": "active",
       "createdAt": "2026-06-26T14:54:04.402Z"
+    },
+    {
+      "id": "usr_1782550937988",
+      "name": "Elias Lagat",
+      "nationalId": "21345678",
+      "phone": "0712345678",
+      "email": "elias12@gmail.com",
+      "password": "$2b$10$ZNSnikh76wW8mBqVzvx5xemLzOOa.bdYpLoMuU0gEd940BmCWOIqq",
+      "role": "citizen",
+      "status": "active",
+      "createdAt": "2026-06-27T09:02:17.988Z"
     }
   ],
   "services": [
@@ -224,6 +235,114 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log_1782551481497_aiplc",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-27T09:11:21.497Z"
+    },
+    {
+      "id": "log_1782550937990_eb7qe",
+      "userId": "usr_1782550937988",
+      "userName": "Elias Lagat",
+      "userRole": "citizen",
+      "action": "Registration",
+      "details": "Citizen registered a new account",
+      "createdAt": "2026-06-27T09:02:17.990Z"
+    },
+    {
+      "id": "log_1782550680189_zuzkt",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-27T08:58:00.189Z"
+    },
+    {
+      "id": "log_1782550470723_37kcj",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-27T08:54:30.723Z"
+    },
+    {
+      "id": "log_1782550413258_btxd3",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-27T08:53:33.258Z"
+    },
+    {
+      "id": "log_1782549972377_3j71v",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Profile Update",
+      "details": "Updated name or contact info",
+      "createdAt": "2026-06-27T08:46:12.377Z"
+    },
+    {
+      "id": "log_1782549964643_lkmmj",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Profile Update",
+      "details": "Updated name or contact info",
+      "createdAt": "2026-06-27T08:46:04.643Z"
+    },
+    {
+      "id": "log_1782549934030_6tltq",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Profile Update",
+      "details": "Updated name or contact info",
+      "createdAt": "2026-06-27T08:45:34.030Z"
+    },
+    {
+      "id": "log_1782549925882_1ltik",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-27T08:45:25.882Z"
+    },
+    {
+      "id": "log_1782491510789_ykbbu",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T16:31:50.789Z"
+    },
+    {
+      "id": "log_1782490363222_ly5m1",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T16:12:43.222Z"
+    },
+    {
+      "id": "log_1782490224235_kum3x",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-26T16:10:24.235Z"
+    },
     {
       "id": "log_1782488391006_998nh",
       "userId": "usr_1782485644402",

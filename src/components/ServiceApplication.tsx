@@ -36,12 +36,12 @@ export default function ServiceApplication({
 
     showToast("Scanned File", `Processing digital upload of ${file.name}...`, "success");
 
-    // Assign different elegant default Unsplash placeholder based on document type
+// Assign different Kenyan default images (from local image folder) based on document type
     const mockDocumentUrls = [
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=300",
-      "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=300",
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=300",
-      "https://images.unsplash.com/photo-1505784043824-aa970094ee9b?auto=format&fit=crop&q=80&w=300"
+      "/src/components/image/birth certificate.webp",
+      "/src/components/image/certificate of good conduct.jpeg",
+      "/src/components/image/kenya-id-card-e1718167267333.jpg",
+      "/src/components/image/Kenyan-e-passport.jpg"
     ];
     const randomIndex = Math.floor(Math.random() * mockDocumentUrls.length);
 

@@ -170,7 +170,8 @@ export default function App() {
   // Submit profile details update
   const handleUpdateProfile = async (name: string, phone: string) => {
     const token = localStorage.getItem("smart_citizen_token");
-    const res = await fetch("/api/auth/update", {
+    const res = await fetch("/api/auth/profile", {
+
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
