@@ -9,7 +9,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const PORT = 3000;
+const DEFAULT_PORT = Number(process.env.PORT || 3000);
 const JWT_SECRET = process.env.JWT_SECRET || "kenya_smart_citizen_secret_key_2026";
 const DB_FILE = path.join(process.cwd(), "smart_citizen_db.json");
 
@@ -1040,9 +1040,24 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Kenya Smart Citizen Portal full-stack server operating dynamically at http://localhost:${PORT}`);
-  });
+  const listenOnPort = (port: number) => {
+    const server = app.listen(port, "0.0.0.0", () => {
+      console.log(`Kenya Smart Citizen Portal full-stack server operating dynamically at http://localhost:${port}`);
+    });
+
+    server.on("error", (error: NodeJS.ErrnoException) => {
+      if (error.code === "EADDRINUSE") {
+        console.warn(`Port ${port} is already in use. Trying ${port + 1}...`);
+        server.close();
+        listenOnPort(port + 1);
+      } else {
+        console.error("Failed to start server:", error);
+        process.exit(1);
+      }
+    });
+  };
+
+  listenOnPort(DEFAULT_PORT);
 }
 
 startServer();

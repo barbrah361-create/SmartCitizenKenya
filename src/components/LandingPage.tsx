@@ -20,12 +20,28 @@ export default function LandingPage({ services }: LandingPageProps) {
   const [contactMessage, setContactMessage] = useState("");
   const [contactSuccess, setContactSuccess] = useState(false);
 
-  useEffect(() => {
-    fetch("/api/articles")
-      .then((res) => res.json())
-      .then((data) => setArticles(data))
-      .catch((e) => console.error("Failed to load articles", e));
-  }, []);
+  const [articlesPage, setArticlesPage] = useState(0);
+  const [servicesPage, setServicesPage] = useState(0);
+  const articlesPerPage = 3;
+  const servicesPerPage = 3;
+
+  const isIdImage = (imageSrc: string) => {
+    return imageSrc?.toLowerCase().includes('id') || imageSrc?.toLowerCase().includes('identity');
+  };
+
+  const ImageWithWatermark = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
+    const showWatermark = isIdImage(src);
+    return (
+      <div className="relative w-full h-full">
+        <img src={src} alt={alt} className={`w-full h-full ${className || 'object-cover'}`} />
+        {showWatermark && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+            <span className="text-white text-4xl font-black opacity-40 rotate-45 pointer-events-none select-none">SAMPLE</span>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,22 +70,62 @@ export default function LandingPage({ services }: LandingPageProps) {
     { label: "Daily Transactions", value: "35,000+", icon: Activity, color: "text-red-600" }
   ];
 
+  const localKenyanImages = {
+    boda: new URL("../image/Boda-boda-launch.jpg", import.meta.url).toString(),
+    passport: new URL("../image/Kenyan-e-passport.jpg", import.meta.url).toString(),
+    id: new URL("../image/kenya-id-card-e1718167267333.jpg", import.meta.url).toString(),
+    permit: new URL("../image/bussiness permit.webp", import.meta.url).toString(),
+    birth: new URL("../image/birth certificate.webp", import.meta.url).toString(),
+    conduct: new URL("../image/certificate of good conduct.jpeg", import.meta.url).toString(),
+    driving: new URL("../image/driving lisence kenya.jpeg", import.meta.url).toString(),
+  };
+
+  const getServiceImage = (srv: any) => {
+    const serviceText = `${srv.name ?? ""} ${srv.department ?? ""}`.toLowerCase();
+
+    if (serviceText.includes("boda") || serviceText.includes("motorcycle")) return localKenyanImages.boda;
+    if (serviceText.includes("id")) return localKenyanImages.id;
+    if (serviceText.includes("passport")) return localKenyanImages.passport;
+    if (serviceText.includes("conduct") || serviceText.includes("police")) return localKenyanImages.conduct;
+    if (serviceText.includes("permit") || serviceText.includes("business")) return localKenyanImages.permit;
+    if (serviceText.includes("driver") || serviceText.includes("license") || serviceText.includes("licence")) return localKenyanImages.driving;
+    if (serviceText.includes("birth")) return localKenyanImages.birth;
+
+    return srv.image || localKenyanImages.id;
+  };
+
+  const getArticleImage = (art: any) => {
+    const titleText = `${art?.title ?? ""} ${art?.category ?? ""}`.toLowerCase();
+
+    if (titleText.includes("passport") || titleText.includes("travel")) return localKenyanImages.passport;
+    if (titleText.includes("driver") || titleText.includes("license") || titleText.includes("licence")) return localKenyanImages.driving;
+    if (titleText.includes("permit") || titleText.includes("business")) return localKenyanImages.permit;
+    if (titleText.includes("conduct") || titleText.includes("police")) return localKenyanImages.conduct;
+    if (titleText.includes("birth") || titleText.includes("certificate")) return localKenyanImages.birth;
+    if (titleText.includes("id") || titleText.includes("identity")) return localKenyanImages.id;
+
+    return art?.image || localKenyanImages.boda;
+  };
+
   const successStories = [
     {
       name: "Mercy Wambui",
       role: "Boda Boda Operator, Nairobi",
-      quote: "Getting my motorcycle registration certificate took me only 3 days on this portal! No long queues, no middlemen. It is a real lifesaver.",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
-      rating: 5
+      quote:
+        "Getting my motorcycle registration certificate took me only 3 days on this portal! No long queues, no middlemen. It is a real lifesaver.",
+      avatar: localKenyanImages.boda,
+      rating: 5,
     },
     {
       name: "Josphat Kiprop",
       role: "Founder, Rift Tech Solutions",
-      quote: "I renewed our county business permits instantly. The unified billing meant we paid once, got approved, and printed our seal in 48 hours.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
-      rating: 5
-    }
+      quote:
+        "I renewed our county business permits instantly. The unified billing meant we paid once, got approved, and printed our seal in 48 hours.",
+      avatar: localKenyanImages.passport,
+      rating: 5,
+    },
   ];
+
 
   const benefits = [
     {
@@ -125,34 +181,35 @@ export default function LandingPage({ services }: LandingPageProps) {
     <div className="space-y-16 pb-12 transition-colors">
       
       {/* SECTION 1: HERO SECTION */}
-      <section className="relative overflow-hidden bg-[#006600] text-white min-h-[500px] flex items-center pt-24 pb-16">
+      <section className="relative overflow-hidden text-white min-h-[600px] flex items-center pt-24 pb-16">
         {/* Dynamic Image underlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=1200"
-            alt="Nairobi skyline digital blueprint"
-            className="w-full h-full object-cover opacity-10 filter grayscale"
+            src={new URL("../image/New-Kenya-logo.jpeg", import.meta.url).toString()}
+            alt="Republic of Kenya crest"
+            className="w-full h-full object-cover opacity-40 brightness-110"
           />
-          <div className="absolute inset-0 bg-black/40" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/40 to-black/55 backdrop-blur-sm" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-sm font-bold text-[10px] text-white tracking-widest uppercase">
+              <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md border border-white/25 px-3.5 py-1.5 rounded-full font-bold text-[10px] text-white tracking-widest uppercase shadow-lg">
                 <KenyaLogo className="w-5 h-5" />
                 <span>REPUBLIC OF KENYA • VISION 2026</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight leading-none uppercase">
-                Secure Portal for <span className="text-white block sm:inline font-bold">Citizen Services</span>
+                Secure Portal for <span className="text-amber-200 block sm:inline font-bold">Citizen Services</span>
               </h1>
-              <p className="text-sm text-green-100 max-w-xl font-sans leading-relaxed">
+              <p className="text-sm text-gray-100 max-w-xl font-sans leading-relaxed">
                 Experience Kenya&apos;s next-generation eCitizen portal. Register motorbikes, apply for national IDs, renew driving credentials, or verify security certificates seamlessly under one unified gateway.
               </p>
 
               {/* Global search form */}
-              <form onSubmit={handleSearchSubmit} className="flex bg-white p-1 rounded-md max-w-lg shadow-sm border border-gray-100">
+              <form onSubmit={handleSearchSubmit} className="flex bg-white p-1 rounded-full max-w-lg shadow-lg border border-gray-100">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-3.5 w-4 h-4 text-gray-400" />
                   <input
@@ -165,7 +222,7 @@ export default function LandingPage({ services }: LandingPageProps) {
                 </div>
                 <button
                   type="submit"
-                  className="bg-[#006600] hover:bg-green-800 text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-md transition-all shrink-0 flex items-center space-x-1"
+                  className="bg-[#006600] hover:bg-green-800 text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-full transition-all shrink-0 flex items-center space-x-1"
                 >
                   <span>Search</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -175,7 +232,7 @@ export default function LandingPage({ services }: LandingPageProps) {
 
             <div className="lg:col-span-5 hidden lg:block">
               {/* Premium Floating Badge Panel */}
-              <div className="p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md shadow-sm relative space-y-4">
+              <div className="p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl relative space-y-4">
                 <div className="absolute top-[-10px] right-4 bg-[#BB0000] text-white text-[9px] font-mono uppercase font-black px-2 py-0.5 rounded-sm">
                   NEW REFORMS
                 </div>
@@ -205,11 +262,23 @@ export default function LandingPage({ services }: LandingPageProps) {
           
           <div className="lg:col-span-6 relative">
             <div className="absolute top-2 left-2 w-full h-full bg-[#006600] rounded-md z-0" />
-            <img
-              src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=600"
-              alt="Kenyan digital infrastructure"
-              className="w-full h-auto rounded-md shadow-sm relative z-10 object-cover min-h-[350px]"
-            />
+            <div className="relative z-10 overflow-hidden rounded-md shadow-sm">
+              <img
+                src={localKenyanImages.id}
+                alt="Kenyan national ID card"
+                className="w-full h-auto object-cover min-h-[350px]"
+              />
+              <div className="absolute inset-x-[12%] top-[32%] h-[34%] rounded-xl border border-white/40 bg-black/60 backdrop-blur-md flex items-center justify-center shadow-lg">
+                <span className="text-2xl sm:text-3xl font-black uppercase tracking-[0.35em] text-white/90 drop-shadow">
+                  Sample
+                </span>
+              </div>
+              <div className="absolute inset-x-0 bottom-3 flex justify-center">
+                <span className="rounded-full bg-black/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/90">
+                  Preview Only
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="lg:col-span-6 space-y-5">
@@ -262,7 +331,7 @@ export default function LandingPage({ services }: LandingPageProps) {
                 {/* Service Image banner */}
                 <div className="h-40 overflow-hidden relative">
                   <img
-                    src={srv.image}
+                    src={getServiceImage(srv)}
                     alt={srv.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -414,24 +483,44 @@ export default function LandingPage({ services }: LandingPageProps) {
       <section className="bg-gray-50 dark:bg-neutral-900/40 py-16 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider">
-              News & Announcements
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-500 dark:text-neutral-400 mt-2">
-              Official press briefings regarding digitized infrastructure policies, County laws, and Huduma upgrades.
-            </p>
+          <div className="flex justify-between items-center mb-12">
+            <div className="text-left">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wider">
+                News & Announcements
+              </h2>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-neutral-400 mt-2">
+                Official press briefings regarding digitized infrastructure policies, County laws, and Huduma upgrades.
+              </p>
+            </div>
+            {articles.length > 3 && (
+              <div className="flex gap-2 items-center">
+                <button
+                  onClick={() => setArticlesPage(Math.max(0, articlesPage - 1))}
+                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-800 disabled:opacity-50 cursor-pointer"
+                  disabled={articlesPage === 0}
+                >
+                  <ChevronDown className="w-5 h-5 rotate-90" />
+                </button>
+                <button
+                  onClick={() => setArticlesPage(Math.min(Math.floor((articles.length - 1) / articlesPerPage), articlesPage + 1))}
+                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-800 disabled:opacity-50 cursor-pointer"
+                  disabled={articlesPage >= Math.floor((articles.length - 1) / articlesPerPage)}
+                >
+                  <ChevronUp className="w-5 h-5 -rotate-90" />
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.slice(0, 3).map((art) => (
+            {articles.slice(articlesPage * articlesPerPage, (articlesPage + 1) * articlesPerPage).map((art) => (
               <div
                 key={art.id}
                 className="bg-white dark:bg-neutral-800 border border-gray-100 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-sm flex flex-col"
               >
-                <div className="h-44 overflow-hidden">
-                  <img
-                    src={art.image}
+                <div className="h-44 overflow-hidden relative">
+                  <ImageWithWatermark
+                    src={getArticleImage(art)}
                     alt={art.title}
                     className="w-full h-full object-cover"
                   />
@@ -537,13 +626,22 @@ export default function LandingPage({ services }: LandingPageProps) {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent z-10" />
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
-                alt="Silicon savannah entrepreneurs"
-                className="w-full h-auto rounded-2xl shadow-2xl relative z-0 object-cover min-h-[300px]"
-              />
+            <div className="grid gap-4">
+              <div className="rounded-2xl border border-emerald-800/40 bg-gradient-to-br from-neutral-900 to-neutral-800 p-4 shadow-lg">
+                <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-emerald-400">Today&apos;s Brief</div>
+                <h3 className="mt-2 text-sm font-bold uppercase tracking-wide text-white">Digital ID renewals now faster</h3>
+                <p className="mt-2 text-xs leading-relaxed text-neutral-400">Citizens can now complete renewals and updates through a more secure, step-by-step portal experience.</p>
+              </div>
+              <div className="rounded-2xl border border-amber-800/40 bg-gradient-to-br from-neutral-900 to-neutral-800 p-4 shadow-lg">
+                <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-amber-400">County Update</div>
+                <h3 className="mt-2 text-sm font-bold uppercase tracking-wide text-white">New permit processing flow</h3>
+                <p className="mt-2 text-xs leading-relaxed text-neutral-400">County departments are aligning their approvals into one smoother and more transparent digitized system.</p>
+              </div>
+              <div className="rounded-2xl border border-red-800/40 bg-gradient-to-br from-neutral-900 to-neutral-800 p-4 shadow-lg">
+                <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-red-400">Public Notice</div>
+                <h3 className="mt-2 text-sm font-bold uppercase tracking-wide text-white">Secure verification for certificates</h3>
+                <p className="mt-2 text-xs leading-relaxed text-neutral-400">Every issued document can be checked through the public verification page using QR codes and reference numbers.</p>
+              </div>
             </div>
 
           </div>

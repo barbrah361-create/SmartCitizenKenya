@@ -65,6 +65,7 @@ export default function Auth({ onLoginSuccess, showToast }: AuthProps) {
 
         if (res.ok) {
           showToast("Karibu!", "Citizen account successfully initialized.", "success");
+          showToast("Email Confirmation", `A verification link has been sent to ${email}. Please check your inbox.`, "success");
           onLoginSuccess(data.user, data.token);
           navigate("/dashboard");
         } else {

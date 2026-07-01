@@ -29,7 +29,22 @@ export default function Dashboard({
   // Profile update fields
   const [profileName, setProfileName] = useState(user?.name || "");
   const [profilePhone, setProfilePhone] = useState(user?.phone || "");
+  const [profileImage, setProfileImage] = useState(user?.profileImage || "");
   const [updatingProfile, setUpdatingProfile] = useState(false);
+  const [showQrScanner, setShowQrScanner] = useState(false);
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  const handleProfileImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImage(reader.result as string);
+        showToast("Image Selected", "Profile picture updated. Save your profile to confirm.", "success");
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   // Verification qr preview modal
   const [activeCertQr, setActiveCertQr] = useState<string | null>(null);
@@ -319,6 +334,34 @@ export default function Dashboard({
               <span>Identity Profile</span>
             </h3>
 
+            {/* Profile Image Upload */}
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-gray-500 dark:text-neutral-400 block">Profile Picture</label>
+              <div className="flex items-end gap-3">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#006600] to-green-700 flex items-center justify-center overflow-hidden border-2 border-gray-200 dark:border-neutral-700 shadow-sm">
+                  {profileImage ? (
+                    <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+                  ) : (
+                    <User className="w-8 h-8 text-white" />
+                  )}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex-1 px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-gray-700 dark:text-neutral-300 font-bold text-xs uppercase tracking-wider rounded-md transition-colors cursor-pointer"
+                >
+                  Upload Photo
+                </button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleProfileImageChange}
+                  className="hidden"
+                />
+              </div>
+            </div>
+
             <form onSubmit={handleProfileSubmit} className="space-y-4">
               <div>
                 <label className="text-xs font-bold text-gray-500 dark:text-neutral-400 block mb-1">Your Legal Name</label>
@@ -373,6 +416,23 @@ export default function Dashboard({
                 {updatingProfile ? "Updating..." : "Synchronize Profile"}
               </button>
             </form>
+
+            {/* QR Scanner Button */}
+            <div className="pt-2 border-t border-gray-200 dark:border-neutral-800">
+              <button
+                onClick={() => setShowQrScanner(!showQrScanner)}
+                className="w-full flex items-center justify-center space-x-2 px-3 py-2 bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/30 dark:hover:bg-amber-950/50 text-amber-700 dark:text-amber-400 font-bold text-xs uppercase tracking-wider rounded-md transition-colors cursor-pointer"
+              >
+                <QrCode className="w-4 h-4" />
+                <span>Scan Certificate QR</span>
+              </button>
+              {showQrScanner && (
+                <div className="mt-3 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 rounded-md text-xs text-amber-800 dark:text-amber-300">
+                  <p className="font-bold mb-1">QR Scanner Ready</p>
+                  <p>On a mobile device, open the verify page and scan a certificate QR code to validate instantly.</p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Notifications feed */}

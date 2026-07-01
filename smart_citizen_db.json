@@ -151,6 +151,29 @@
   ],
   "applications": [
     {
+      "id": "app_1782552121370",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userEmail": "barbrah361@gmail.com",
+      "serviceId": "srv_id",
+      "serviceName": "National ID Card Application",
+      "status": "Submitted",
+      "fields": {
+        "birthCertNo": "DE-123456-N",
+        "chiefName": "Yator Yego"
+      },
+      "documents": [
+        {
+          "id": "doc_1782552114087",
+          "name": "IMG-20260101-WA0035~2.jpg",
+          "url": "/src/components/image/birth certificate.webp",
+          "size": "160 KB"
+        }
+      ],
+      "createdAt": "2026-06-27T09:22:01.370Z",
+      "updatedAt": "2026-06-27T09:22:01.370Z"
+    },
+    {
       "id": "app_demo_1",
       "userId": "usr_citizen",
       "userName": "David Kiprop",
@@ -235,6 +258,78 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log_1782909782336_0shmx",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Profile Update",
+      "details": "Updated name or contact info",
+      "createdAt": "2026-07-01T12:43:02.336Z"
+    },
+    {
+      "id": "log_1782909759928_a84qg",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-07-01T12:42:39.928Z"
+    },
+    {
+      "id": "log_1782908643850_8tvru",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-07-01T12:24:03.850Z"
+    },
+    {
+      "id": "log_1782908222134_accof",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-07-01T12:17:02.134Z"
+    },
+    {
+      "id": "log_1782906686231_ge5l1",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-07-01T11:51:26.231Z"
+    },
+    {
+      "id": "log_1782735139887_z5od4",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-29T12:12:19.887Z"
+    },
+    {
+      "id": "log_1782734635642_00cmi",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Login",
+      "details": "User logged in successfully",
+      "createdAt": "2026-06-29T12:03:55.642Z"
+    },
+    {
+      "id": "log_1782552121372_iubdu",
+      "userId": "usr_1782485644402",
+      "userName": "BARBRAH ANGEELIQUE",
+      "userRole": "citizen",
+      "action": "Create Application",
+      "details": "Submitted application for: National ID Card Application",
+      "createdAt": "2026-06-27T09:22:01.372Z"
+    },
     {
       "id": "log_1782551481497_aiplc",
       "userId": "usr_1782485644402",

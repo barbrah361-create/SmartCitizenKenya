@@ -10,19 +10,11 @@ import {
   MessageSquare,
 } from "lucide-react";
 
-import logo from "./image/New-Kenya-logo.jpeg";
-
-function KenyaLogo({ className }: { className?: string }) {
-  return (
-    <img
-      src={logo}
-      alt="Kenya Coat of Arms"
-      className={`${className} object-contain transition-transform duration-300 group-hover:scale-105 shrink-0`}
-    />
-  );
-}
+import KenyaLogo from "./KenyaLogo";
 
 interface HeaderProps {
+
+
   user: any;
   onLogout: () => void;
   darkMode: boolean;

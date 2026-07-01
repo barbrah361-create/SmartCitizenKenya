@@ -38,11 +38,12 @@ export default function ServiceApplication({
 
 // Assign different Kenyan default images (from local image folder) based on document type
     const mockDocumentUrls = [
-      "/src/components/image/birth certificate.webp",
-      "/src/components/image/certificate of good conduct.jpeg",
-      "/src/components/image/kenya-id-card-e1718167267333.jpg",
-      "/src/components/image/Kenyan-e-passport.jpg"
+      "/src/image/birth certificate.webp",
+      "/src/image/certificate of good conduct.jpeg",
+      "/src/image/kenya-id-card-e1718167267333.jpg",
+      "/src/image/Kenyan-e-passport.jpg"
     ];
+
     const randomIndex = Math.floor(Math.random() * mockDocumentUrls.length);
 
     setTimeout(() => {
